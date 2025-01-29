@@ -1,0 +1,9 @@
+load training-data mnist_train.csv
+load test-data mnist_test.csv
+config network-functions Cost=logLoss Act=sigmoid
+config network-layers=advanced {784,32,10}
+config network-training epochs=10 learningRate=0.0001 trainMode=miniBatch(128)
+load current-config
+train
+save network-data netData.net
+esc
